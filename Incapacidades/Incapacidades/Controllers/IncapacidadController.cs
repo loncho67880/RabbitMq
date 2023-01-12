@@ -23,7 +23,7 @@ namespace Incapacidades.Controllers
         }
 
         [HttpPost(Name = "AnularIncapacidad")]
-        public Incapacidad Get()
+        public Incapacidad Post()
         {
             var incapacidad = new Incapacidad
             {

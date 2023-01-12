@@ -13,6 +13,9 @@ namespace Notificaciones.Consumer
         private IModel _channel;
         private IConfiguration _configuration;
         private IAnulacionServicio _anulacionServicio;
+        private const string ExchangeIncapacidadName = "Incapacidad_Exchange";
+        private const string EmailQueueName = "EmailQueueName";
+        private const string EmailQueueNameRouteKey = "EmailQueueNameRouteKey";
 
         public IncapacidadConsumer(IConfiguration configuration, IAnulacionServicio anulacionServicio)
         {
@@ -28,7 +31,9 @@ namespace Notificaciones.Consumer
             _connection = factory.CreateConnection();
             _channel = _connection.CreateModel();
 
-            _channel.QueueDeclare("incapacidad", exclusive: false, autoDelete: true);
+            _channel.ExchangeDeclare(ExchangeIncapacidadName, ExchangeType.Direct);
+            _channel.QueueDeclare(EmailQueueName, false, false, false, null);
+            _channel.QueueBind(EmailQueueName, ExchangeIncapacidadName, EmailQueueNameRouteKey);
         }
 
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
@@ -44,7 +49,7 @@ namespace Notificaciones.Consumer
 
                 _channel.BasicAck(ea.DeliveryTag, false);
             };
-            _channel.BasicConsume("incapacidad", false, consumer);
+            _channel.BasicConsume(EmailQueueName, false, consumer);
 
             return Task.CompletedTask;
         }

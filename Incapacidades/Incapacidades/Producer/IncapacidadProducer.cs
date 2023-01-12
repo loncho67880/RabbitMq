@@ -7,6 +7,13 @@ namespace Incapacidades.Producer
     public class IncapacidadProducer : IIncapacidadProducer
     {
         private IConfiguration _configuration;
+
+        private const string ExchangeIncapacidadName = "Incapacidad_Exchange";
+        private const string EmailQueueName = "EmailQueueName";
+        private const string AlertaQueueName = "AlertaQueueName";
+        private const string EmailQueueNameRouteKey = "EmailQueueNameRouteKey";
+        private const string AlertaQueueNameRouteKey = "AlertaQueueNameRouteKey";
+
         public IncapacidadProducer(IConfiguration configuration)
         {
             _configuration = configuration;
@@ -32,12 +39,18 @@ namespace Incapacidades.Producer
             using
             var channel = connection.CreateModel();
             //declare the queue after mentioning name and a few property related to that
-            channel.QueueDeclare("incapacidad", exclusive: false);
+            channel.ExchangeDeclare(ExchangeIncapacidadName, ExchangeType.Direct, durable: false);
+            channel.QueueDeclare(EmailQueueName, false, false, false, null);
+            channel.QueueDeclare(AlertaQueueName, false, false, false, null);
+
+            channel.QueueBind(EmailQueueName, ExchangeIncapacidadName, EmailQueueNameRouteKey);
+            channel.QueueBind(AlertaQueueName, ExchangeIncapacidadName, AlertaQueueNameRouteKey);
             //Serialize the message
             var json = JsonConvert.SerializeObject(message);
             var body = Encoding.UTF8.GetBytes(json);
             //put the data on to the product queue
-            channel.BasicPublish(exchange: "", routingKey: "incapacidad", body: body);
+            channel.BasicPublish(exchange: ExchangeIncapacidadName, routingKey: EmailQueueNameRouteKey, body: body);
+            channel.BasicPublish(exchange: ExchangeIncapacidadName, routingKey: AlertaQueueNameRouteKey, body: body);
         }
     }
 }
