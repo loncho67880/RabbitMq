@@ -22,4 +22,10 @@
     <ProjectReference Include="..\Servicios\Servicios.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Template\MailAnulacion.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

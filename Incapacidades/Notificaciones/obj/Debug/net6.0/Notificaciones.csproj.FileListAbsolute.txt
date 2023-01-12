@@ -29,3 +29,10 @@ E:\Proyectos\MinSalud\PocRabbit\Incapacidades\Notificaciones\obj\Debug\net6.0\re
 E:\Proyectos\MinSalud\PocRabbit\Incapacidades\Notificaciones\obj\Debug\net6.0\Notificaciones.pdb
 E:\Proyectos\MinSalud\PocRabbit\Incapacidades\Notificaciones\obj\Debug\net6.0\Notificaciones.genruntimeconfig.cache
 E:\Proyectos\MinSalud\PocRabbit\Incapacidades\Notificaciones\obj\Debug\net6.0\ref\Notificaciones.dll
+E:\Proyectos\MinSalud\PocRabbit\Incapacidades\Notificaciones\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\Proyectos\MinSalud\PocRabbit\Incapacidades\Notificaciones\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+E:\Proyectos\MinSalud\PocRabbit\Incapacidades\Notificaciones\bin\Debug\net6.0\Common.dll
+E:\Proyectos\MinSalud\PocRabbit\Incapacidades\Notificaciones\bin\Debug\net6.0\Servicios.dll
+E:\Proyectos\MinSalud\PocRabbit\Incapacidades\Notificaciones\bin\Debug\net6.0\Common.pdb
+E:\Proyectos\MinSalud\PocRabbit\Incapacidades\Notificaciones\bin\Debug\net6.0\Servicios.pdb
+E:\Proyectos\MinSalud\PocRabbit\Incapacidades\Notificaciones\bin\Debug\net6.0\Template\MailAnulacion.html

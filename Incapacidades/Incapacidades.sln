@@ -5,8 +5,6 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Incapacidades", "Incapacidades\Incapacidades.csproj", "{000EACE6-0E08-405C-B237-0EF0D663140C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Notificaciones", "Notificaciones\Notificaciones.csproj", "{2F4D918E-F21F-4C8E-B7D5-5ED72366A723}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{11C85310-E992-4384-BA03-73438734D555}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{59328406-D218-4458-990D-10C0EE426734}"
@@ -23,10 +21,6 @@ Global
 		{000EACE6-0E08-405C-B237-0EF0D663140C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{000EACE6-0E08-405C-B237-0EF0D663140C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{000EACE6-0E08-405C-B237-0EF0D663140C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2F4D918E-F21F-4C8E-B7D5-5ED72366A723}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2F4D918E-F21F-4C8E-B7D5-5ED72366A723}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2F4D918E-F21F-4C8E-B7D5-5ED72366A723}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2F4D918E-F21F-4C8E-B7D5-5ED72366A723}.Release|Any CPU.Build.0 = Release|Any CPU
 		{11C85310-E992-4384-BA03-73438734D555}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{11C85310-E992-4384-BA03-73438734D555}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11C85310-E992-4384-BA03-73438734D555}.Release|Any CPU.ActiveCfg = Release|Any CPU

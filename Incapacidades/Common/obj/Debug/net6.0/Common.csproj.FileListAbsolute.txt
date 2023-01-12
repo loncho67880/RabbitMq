@@ -1,0 +1,12 @@
+E:\Proyectos\MinSalud\PocRabbit\Incapacidades\Common\bin\Debug\net6.0\Common.deps.json
+E:\Proyectos\MinSalud\PocRabbit\Incapacidades\Common\bin\Debug\net6.0\Common.dll
+E:\Proyectos\MinSalud\PocRabbit\Incapacidades\Common\bin\Debug\net6.0\Common.pdb
+E:\Proyectos\MinSalud\PocRabbit\Incapacidades\Common\obj\Debug\net6.0\Common.csproj.AssemblyReference.cache
+E:\Proyectos\MinSalud\PocRabbit\Incapacidades\Common\obj\Debug\net6.0\Common.GeneratedMSBuildEditorConfig.editorconfig
+E:\Proyectos\MinSalud\PocRabbit\Incapacidades\Common\obj\Debug\net6.0\Common.AssemblyInfoInputs.cache
+E:\Proyectos\MinSalud\PocRabbit\Incapacidades\Common\obj\Debug\net6.0\Common.AssemblyInfo.cs
+E:\Proyectos\MinSalud\PocRabbit\Incapacidades\Common\obj\Debug\net6.0\Common.csproj.CoreCompileInputs.cache
+E:\Proyectos\MinSalud\PocRabbit\Incapacidades\Common\obj\Debug\net6.0\Common.dll
+E:\Proyectos\MinSalud\PocRabbit\Incapacidades\Common\obj\Debug\net6.0\refint\Common.dll
+E:\Proyectos\MinSalud\PocRabbit\Incapacidades\Common\obj\Debug\net6.0\Common.pdb
+E:\Proyectos\MinSalud\PocRabbit\Incapacidades\Common\obj\Debug\net6.0\ref\Common.dll

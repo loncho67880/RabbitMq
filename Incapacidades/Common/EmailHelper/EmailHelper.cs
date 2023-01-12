@@ -4,7 +4,7 @@
     {
         public void SendEmail(EmailModel email)
         {
-            Console.WriteLine(email);
+            Console.WriteLine("Correo Enviado");
         }
     }
 }

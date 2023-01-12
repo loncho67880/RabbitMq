@@ -11,11 +11,13 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddHostedService<IncapacidadConsumer>();
 
-builder.Services.AddScoped<IEmailHelper, EmailHelper>();
-builder.Services.AddScoped<IReadTemplateHelper, ReadTemplateHelper>();
-builder.Services.AddScoped<IAnulacionServicio, AnulacionServicio>();
+builder.Services.AddSingleton<IEmailHelper, EmailHelper>();
+builder.Services.AddSingleton<IReadTemplateHelper, ReadTemplateHelper>();
+builder.Services.AddSingleton<IAnulacionServicio, AnulacionServicio>();
+
+//Add consumers
+builder.Services.AddHostedService<IncapacidadConsumer>();
 
 var app = builder.Build();
 

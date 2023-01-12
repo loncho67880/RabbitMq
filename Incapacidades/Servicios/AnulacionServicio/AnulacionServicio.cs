@@ -2,6 +2,7 @@
 using Common.ReadTemplateHelper;
 using Core.Incapacidades;
 using Microsoft.Extensions.Configuration;
+using static Common.EmailHelper.EmailModel;
 
 namespace Servicios.AnulacionServicio
 {
@@ -9,10 +10,13 @@ namespace Servicios.AnulacionServicio
     {
         private readonly IReadTemplateHelper _readTemplateHelper;
         private readonly IConfiguration _configuration;
+        private readonly IEmailHelper _emailHelper;
 
-        public AnulacionServicio(IReadTemplateHelper readTemplateHelper, IConfiguration configuration)
+        public AnulacionServicio(IReadTemplateHelper readTemplateHelper, IConfiguration configuration, IEmailHelper emailHelper)
         {
             _readTemplateHelper = readTemplateHelper;
+            _configuration = configuration;
+            _emailHelper = emailHelper;
         }
 
         public void Anularincapacidad(Incapacidad incapacidad)
@@ -27,17 +31,19 @@ namespace Servicios.AnulacionServicio
             {
                 Subject = "Anulación Incapacidad",
                 FromDisplayName = "MinSalud",
-                Body = new EmailModel.BodyMail()
+                Body = new BodyMail()
                 {
                     Title = "",
                     HtmlContent = templateHtmlBaja,
                 },
                 Type = EmailModel.MailType.Alerta,
-                Addressee = new EmailModel.DestinationMail()
+                Addressee = new DestinationMail()
                 {
                     To = _configuration["mailNotificacion"].Split(";").ToList()
                 }
             };
+
+            _emailHelper.SendEmail(emailAnulacion);
         }
     }
 }

@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
+using Servicios.AnulacionServicio;
 using System.Text;
 
 namespace Notificaciones.Consumer
@@ -11,10 +12,12 @@ namespace Notificaciones.Consumer
         private IConnection _connection;
         private IModel _channel;
         private IConfiguration _configuration;
+        private IAnulacionServicio _anulacionServicio;
 
-        public IncapacidadConsumer(IConfiguration configuration)
+        public IncapacidadConsumer(IConfiguration configuration, IAnulacionServicio anulacionServicio)
         {
             _configuration = configuration;
+            _anulacionServicio = anulacionServicio;
             var factory = new ConnectionFactory
             {
                 HostName = _configuration["Rabbit:HostName"],
@@ -27,6 +30,7 @@ namespace Notificaciones.Consumer
 
             _channel.QueueDeclare("incapacidad", exclusive: false, autoDelete: true);
         }
+
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
         {
             stoppingToken.ThrowIfCancellationRequested();
@@ -36,7 +40,7 @@ namespace Notificaciones.Consumer
             {
                 var content = Encoding.UTF8.GetString(ea.Body.ToArray());
                 Incapacidad incapacidad = JsonConvert.DeserializeObject<Incapacidad>(content);
-                //HandleMessage(incapacidad).GetAwaiter().GetResult();
+                _anulacionServicio.Anularincapacidad(incapacidad);
 
                 _channel.BasicAck(ea.DeliveryTag, false);
             };
