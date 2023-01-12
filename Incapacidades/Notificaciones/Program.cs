@@ -1,4 +1,7 @@
+using Common.EmailHelper;
+using Common.ReadTemplateHelper;
 using Notificaciones.Consumer;
+using Servicios.AnulacionServicio;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +12,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddHostedService<IncapacidadConsumer>();
+
+builder.Services.AddScoped<IEmailHelper, EmailHelper>();
+builder.Services.AddScoped<IReadTemplateHelper, ReadTemplateHelper>();
+builder.Services.AddScoped<IAnulacionServicio, AnulacionServicio>();
 
 var app = builder.Build();
 

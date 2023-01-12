@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "hpmcLb/fwXTvNW/T8Q/u78Zo7HzFFjwMN1z1CsIWjPXUTJFr/X0IF4xNV8wQYhciCv7zdOAIB7GhCSoxPIkrlA==",
+  "success": true,
+  "projectFilePath": "E:\\Proyectos\\MinSalud\\PocRabbit\\Incapacidades\\Servicios\\Servicios.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\German\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\German\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
+    "C:\\Users\\German\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

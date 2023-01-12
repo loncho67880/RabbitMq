@@ -1,3 +1,4 @@
+using Core.Incapacidades;
 using Incapacidades.Producer;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,18 +22,20 @@ namespace Incapacidades.Controllers
             _incapacidadProducer = incapacidadProducer;
         }
 
-        [HttpGet(Name = "GetIncapacidad")]
-        public IEnumerable<Incapacidad> Get()
+        [HttpPost(Name = "AnularIncapacidad")]
+        public Incapacidad Get()
         {
-            var list = Enumerable.Range(0, 5).Select(index => new Incapacidad
+            var incapacidad = new Incapacidad
             {
-                Id = Random.Shared.Next(50, 100)
-                ,
-                Nombre = Tipos[Random.Shared.Next(Tipos.Length)]
-            }).ToArray();
+                Id = Random.Shared.Next(50, 100),
+                Nombre = Tipos[Random.Shared.Next(Tipos.Length)],
+                causa_anulacion = "Error Digitación",
+                fecha_anulacion = DateTime.Today,
+                observacion = "Observación Anulación"
+            };
 
-            _incapacidadProducer.SendNotificatinoIncapacidadMessage<Incapacidad>(list.First());
-            return list;
+            _incapacidadProducer.SendNotificatinoIncapacidadMessage<Incapacidad>(incapacidad);
+            return incapacidad;
         }
     }
 }

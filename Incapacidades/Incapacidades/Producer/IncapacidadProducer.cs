@@ -6,6 +6,12 @@ namespace Incapacidades.Producer
 {
     public class IncapacidadProducer : IIncapacidadProducer
     {
+        private IConfiguration _configuration;
+        public IncapacidadProducer(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+
         /// <summary>
         /// Enviar mensaje
         /// </summary>
@@ -16,9 +22,9 @@ namespace Incapacidades.Producer
             //Here we specify the Rabbit MQ Server. we use rabbitmq docker image and use it
             var factory = new ConnectionFactory
             {
-                HostName = "localhost",
-                UserName = "guest",
-                Password = "guest"
+                HostName = _configuration["Rabbit:HostName"],
+                UserName = _configuration["Rabbit:UserName"],
+                Password = _configuration["Rabbit:Password"]
             };
             //Create the RabbitMQ connection using connection factory details as i mentioned above
             var connection = factory.CreateConnection();

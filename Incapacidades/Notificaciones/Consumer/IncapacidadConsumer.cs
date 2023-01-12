@@ -10,13 +10,16 @@ namespace Notificaciones.Consumer
     {
         private IConnection _connection;
         private IModel _channel;
-        public IncapacidadConsumer()
+        private IConfiguration _configuration;
+
+        public IncapacidadConsumer(IConfiguration configuration)
         {
+            _configuration = configuration;
             var factory = new ConnectionFactory
             {
-                HostName = "localhost",
-                UserName = "guest",
-                Password = "guest"
+                HostName = _configuration["Rabbit:HostName"],
+                UserName = _configuration["Rabbit:UserName"],
+                Password = _configuration["Rabbit:Password"]
             };
 
             _connection = factory.CreateConnection();
