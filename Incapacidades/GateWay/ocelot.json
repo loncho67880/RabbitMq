@@ -1,0 +1,19 @@
+{
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/Incapacidad",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7209
+        }
+      ],
+      "DownstreamPathTemplate": "/Incapacidad",
+      "Key": "entitiesPost"
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:7209"
+  }
+}

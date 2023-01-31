@@ -53,18 +53,5 @@ namespace Notificaciones.Consumer
 
             return Task.CompletedTask;
         }
-
-        //private async Task HandleMessage(Incapacidad updatePaymentResultMessage)
-        //{
-        //    try
-        //    {
-        //        //Save log
-        //        //await _emailRepo.SendAndLogEmail(updatePaymentResultMessage);
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        throw;
-        //    }
-        //}
     }
 }
